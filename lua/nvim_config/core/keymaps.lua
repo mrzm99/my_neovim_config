@@ -24,6 +24,8 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 keymap.set("n", "<leader>vh", "<C-w>h", { desc = "move to left window", noremap = true })
 keymap.set("n", "<leader>vl", "<C-w>l", { desc = "move to right window", noremap = true })
+keymap.set("n", "<leader>vj", "<C-w>j", { desc = "move to down window",  noremap = true })
+keymap.set("n", "<leader>vk", "<C-w>k", { desc = "move to up window", noremap = true })
 
 
 
