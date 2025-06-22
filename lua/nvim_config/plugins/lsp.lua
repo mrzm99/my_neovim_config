@@ -1,9 +1,11 @@
 return {
     "neovim/nvim-lspconfig",
+    lazy = true,
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     },
+    event = "BufReadPre",
     config = function()
         local mason = require("mason")
         local mason_lspconfig = require("mason-lspconfig")
@@ -20,7 +22,7 @@ return {
         })
         
         mason_lspconfig.setup({
-            ensure_installed = { "clangd" },
+            ensure_installed = { "clangd", "lua_ls" },
             automatic_installation = true,
         })
         
@@ -29,6 +31,8 @@ return {
                 local opts = { noremap = true, silent = true }
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
             end,
         })
     end

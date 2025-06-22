@@ -27,5 +27,8 @@ keymap.set("n", "<leader>vl", "<C-w>l", { desc = "move to right window", noremap
 keymap.set("n", "<leader>vj", "<C-w>j", { desc = "move to down window",  noremap = true })
 keymap.set("n", "<leader>vk", "<C-w>k", { desc = "move to up window", noremap = true })
 
+-- registers
+keymap.set("n", "<leader>rg", "<cmd>registers<CR>", { desc = "show registers", noremap = true })
+
 
 
