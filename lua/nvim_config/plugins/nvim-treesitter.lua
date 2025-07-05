@@ -6,18 +6,19 @@ return {
     config = function()
         local configs = require("nvim-treesitter.configs")
         local palette = {
-            red="#993F3A",
-            orange="#C27638",
-            blue="#6671C0",
-            light_blue="#38C2C2",
-            green="#4E874D",
-            purple="#806DC2",
-            yellow="#BFBA2E",
-            black="#171717",
-            white="#E7E7E7",
-            white_blue="#A5D0D1",
-            gray="#C0C0C0",
-            pink="#B04DAB",ed = "#",
+            red = "#993F3A",
+            orange = "#C27638",
+            blue = "#6671C0",
+            light_blue = "#38C2C2",
+            green = "#8DC951",
+            purple = "#6662A4",
+            yellow = "#F6E85e",
+            black = "#202020",
+            white = "#E7E7E7",
+            white_blue = "#A5D0D1",
+            gray = "#B7B7B7",
+            pink = "#B04DAB",
+            lightgreen = "#32CD32",
         }
 
         configs.setup({
