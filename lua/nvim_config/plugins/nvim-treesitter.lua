@@ -27,6 +27,7 @@ return {
             highlight = { enable = true },
             indent = { enable = true },
         })
+    --[[
     --Syntax-relatedsetting
     vim.api.nvim_set_hl(0,"Comment",{fg=palette.gray })
     vim.api.nvim_set_hl(0,"Constant",{fg=palette.red})
@@ -240,5 +241,6 @@ return {
     --Nvim-Tree-related
     vim.api.nvim_set_hl(0,"NvimTreeFolderIcon",{fg="#80989B"})
     vim.api.nvim_set_hl(0,"NvimTreeFileName",{fg=palette.red})
+    --]]
     end
 }
