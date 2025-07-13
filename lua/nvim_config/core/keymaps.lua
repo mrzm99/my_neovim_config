@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 local keymap = vim.keymap   -- for conciseness
 
@@ -30,5 +31,13 @@ keymap.set("n", "<leader>vk", "<C-w>k", { desc = "move to up window", noremap = 
 -- registers
 keymap.set("n", "<leader>rg", "<cmd>registers<CR>", { desc = "show registers", noremap = true })
 
+--quickfix list 
+keymap.set("n", "<leader>co", "<cmd>copen<CR>", { desc = "open quickfix list", noremap = true })
+keymap.set("n", "<leader>cc", "<cmd>cclose<CR>", { desc = "close quickfix list", noremap = true })
 
+-- wrap toggle
+keymap.set("n", "<leader>lb", "<cmd>set wrap!<CR>", { desc = "toggle wrap", noremap = true })
 
+-- buffer setting
+keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = " ", noremap = true })
+keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = " ", noremap = true })

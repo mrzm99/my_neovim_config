@@ -30,8 +30,20 @@ opt.signcolumn = "yes"   -- show sign column so that text dones't shift
 --opt.backspace = "indent,eol,start"   -- allow backspace on indent, end of line or insert start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus")     -- use system clipboard as default register
+--opt.clipboard:append("unnamedplus")     -- use system clipboard as default register
 
 -- split windows
 opt.splitright = true   -- split vertical window to the right
 opt.splitbelow = true   -- split horizontal window to the bottom
+
+-- disable auto input comment
+opt.formatoptions:remove('r')
+
+-- character code
+opt.encoding = 'utf-8'
+
+--file encoding
+opt.fileencodings = { "utf-8", "iso-2022-jp", "euc-jp", "cp932", "latin1" }
+
+
+
