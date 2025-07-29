@@ -39,5 +39,6 @@ return {
         vim.api.nvim_set_keymap("n", "<leader>ch", "<cmd>Telescope command_history<CR>", opts)
         vim.api.nvim_set_keymap("n", "<leader>fq", "<cmd>Telescope quickfix<CR>", opts)
         vim.api.nvim_set_keymap("n", "<leader>fu", "<cmd>Telescope search_history<CR>", opts)
+        vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope marks<CR>", opts)
     end
 }
