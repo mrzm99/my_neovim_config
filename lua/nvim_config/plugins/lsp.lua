@@ -21,11 +21,11 @@ return {
             }
         })
         
-        mason_lspconfig.setup({
-            ensure_installed = { "clangd", "lua_ls" },
-            automatic_installation = true,
-        })
-        
+--        mason_lspconfig.setup({
+--            ensure_installed = { "clangd", "lua_ls" },
+--            automatic_installation = true,
+--        })
+
         lspconfig.clangd.setup({
             on_attach = function(client, bufnr)
                 local opts = { noremap = true, silent = true }
