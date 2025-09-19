@@ -11,12 +11,12 @@ return {
                 theme = "seoul256",
             },
             sections = {
-                lualine_b = { "filename" },
                 lualine_c = {
-                                function()
-                                    return ts_ctx.get_context()
-                                end
-                            },
+                    {
+                        'filename',
+                        path = 3,
+                    }
+                },
             },
         })
     end
