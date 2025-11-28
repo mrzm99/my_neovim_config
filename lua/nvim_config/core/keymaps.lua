@@ -43,4 +43,4 @@ keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = " ", noremap = true })
 keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = " ", noremap = true })
 
 -- marks
-keymap.set("n", "<leader>dm", "<cmd>delmarks a-zA-Z<CR>", { noremap = true })
+keymap.set("n", "<leader>dm", "<cmd>delmarks a-zA-Z<CR>", { desc = "", noremap = true })

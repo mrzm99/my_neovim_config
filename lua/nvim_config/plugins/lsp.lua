@@ -34,5 +34,25 @@ return {
                 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
             end,
         })
+
+        lspconfig.csharp_ls.setup({
+            cmd = { vim.fn.expand("~/.dotnet/tools/csharp-ls") },
+            filetype = { "cs" },
+            root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
+            settings = {
+                csharp = {
+                    formatting = {
+                        enable = true
+                    }
+                },
+            },
+            on_attach = function(client, bufnr)
+                local opts = { noremap = true, silent = true }
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
+            end,
+        })
     end
 }

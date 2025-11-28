@@ -22,12 +22,16 @@ return {
                 },
                 file_ignore_patterns = {
                     "%.git/",
+                    ".git/",
                     "node_modules/",
                     "%.DS_Store/",
                     "%.cache/",
                     "%.vscode/",
+                    ".vscode/",
                     "vendor/",
-                    "built/",
+                    "build/",
+                    "[/\\]bin[/\\]",
+                    "[/\\]obj[/\\]",
                 },
             },
         })
@@ -40,5 +44,6 @@ return {
         vim.api.nvim_set_keymap("n", "<leader>fq", "<cmd>Telescope quickfix<CR>", opts)
         vim.api.nvim_set_keymap("n", "<leader>fu", "<cmd>Telescope search_history<CR>", opts)
         vim.api.nvim_set_keymap("n", "<leader>fm", "<cmd>Telescope marks<CR>", opts)
+        vim.keymap.set("n", "<leader>fd", builtin.diagnostics, opts)
     end
 }
