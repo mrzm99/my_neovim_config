@@ -41,7 +41,7 @@ return {
         vim.api.nvim_set_hl(0, "TSDefinition", { link = "Search", })
         vim.api.nvim_set_hl(0, "TSDefinitionUsage", { link = "Search" })
 
-        local is_hl_enabled = true
+        local is_hl_enabled = false
 
         vim.keymap.set('n', '<leader>th', function()
             is_hl_enabled = not is_hl_enabled
