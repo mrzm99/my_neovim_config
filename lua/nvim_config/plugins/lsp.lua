@@ -27,6 +27,7 @@ return {
 
         lspconfig.clangd.setup({
             on_attach = function(client, bufnr)
+                client.server_capabilities.documentHighlightProvider = false
                 local opts = { noremap = true, silent = true }
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)

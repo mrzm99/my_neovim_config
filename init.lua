@@ -1,4 +1,5 @@
 vim.hl = vim.highlight
+vim.opt.updatetime = 200
 require("nvim_config.core")
 require("nvim_config.lazy")
 -- C言語ファイルを開いたときに自動コメント挿入を無効にする
