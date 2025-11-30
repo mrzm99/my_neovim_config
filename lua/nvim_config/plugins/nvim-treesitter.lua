@@ -38,8 +38,6 @@ return {
                 highlight_current_scope = { enable = false },
             }
         })
-        vim.api.nvim_set_hl(0, "TSDefinition", { link = "Search", })
-        vim.api.nvim_set_hl(0, "TSDefinitionUsage", { link = "Search" })
 
         local is_hl_enabled = false
 
