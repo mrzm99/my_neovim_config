@@ -25,14 +25,20 @@ return {
 --            automatic_installation = true,
 --        })
 
-        lspconfig.clangd.setup({
-            on_attach = function(client, bufnr)
-                client.server_capabilities.documentHighlightProvider = false
-                local opts = { noremap = true, silent = true }
+        vim.api.nvim_create_autocmd('LspAttach', {
+            group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+            callback = function(ev)
+                local opts = { buffer = ev.buf, silent = true }
                 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
                 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
+            end,
+        })
+
+        lspconfig.clangd.setup({
+            on_attach = function(client, bufnr)
+                client.server_capabilities.documentHighlightProvider = false
             end,
         })
 
@@ -47,13 +53,6 @@ return {
                     }
                 },
             },
-            on_attach = function(client, bufnr)
-                local opts = { noremap = true, silent = true }
-                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
-            end,
         })
     end
 }
